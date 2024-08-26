@@ -1,0 +1,37 @@
+
+.form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-title {
+    color: #4e5050;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.form-label {
+    font-weight: bold;
+}
+.form-text {
+    font-style: italic;
+    color: #6c757d;
+}
+.btn-outline-dark {
+    margin-left: 25%;
+    margin-right: 25%;
+    display: block;
+    width: 50%;
+}
+.btn-outline-dark:hover {
+    background-color: #343a40;
+    color: #ffffff;
+}
+.table {
+    margin-top: 20px;
+}
+.btn-danger {
+    margin-left: 1rem;
+}
+
+

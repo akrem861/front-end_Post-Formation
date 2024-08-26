@@ -1,0 +1,29 @@
+.linkedinlogo{
+    width: 37px; /* Largeur légèrement plus grande pour l'icône LinkedIn */
+    height: 32px; /* Hauteur légèrement plus grande pour l'icône LinkedIn */
+}
+.maillogo{
+    width: 22px; /* Largeur légèrement plus grande pour l'icône LinkedIn */
+    height: 17px; /* Hauteur légèrement plus grande pour l'icône LinkedIn */
+    
+}
+.fblogo{
+    width: 30px; /* Largeur légèrement plus grande pour l'icône LinkedIn */
+    height: 25px; /* Hauteur légèrement plus grande pour l'icône LinkedIn */
+    
+}
+.bg-primary {
+    
+    background:linear-gradient(to right, #1a237e, #367cc7); /* Dégradé de bleu foncé */
+    
+    border: 2px solid #ffc107;
+}
+.animated-img {
+    transition: transform 0.3s ease-out; /* Ajoute un effet de transition au zoom */
+}
+
+.animated-img:hover {
+    transform: scale(1.1); /* Zoom de 110% au survol */
+}
+
+

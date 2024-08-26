@@ -1,0 +1,45 @@
+/* Personnalisation de la couleur bleue pour le fond */
+.bg-primary {
+    background:linear-gradient(to right, #1a237e, #367cc7); /* Dégradé de bleu foncé */
+    
+    border: 2px solid #ffc107;
+    margin-top: 3.5rem;
+}
+
+/* Styles supplémentaires pour l'image */
+
+.animated-img {
+    transition: transform 0.3s ease-out; /* Ajoute un effet de transition au zoom */
+}
+
+.animated-img:hover {
+    transform: scale(1.1); /* Zoom de 110% au survol */
+}
+@keyframes swing {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-40px); }
+    100% { transform: translateX(0); }
+}
+
+.swing-animation {
+    animation: swing 2s ease-in-out infinite;
+}
+@keyframes slide-from-right {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    animation: slide-from-right 10s linear infinite; /* Animation dure 1 seconde */
+}
+.containerimg{
+    background-color: rgb(255, 255, 255);
+    filter: drop-shadow(0px 6px 10px rgb(73, 73, 18));
+
+}

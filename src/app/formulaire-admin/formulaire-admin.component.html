@@ -1,0 +1,82 @@
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Inscrire maintenant</h3>
+                    <p>Remplir les données ci-dessous.</p>
+                    <form class="requires-validation" novalidate>
+                        
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" name="titre_formation" placeholder="Titre du formation" required>
+                            <div class="valid-feedback">Titre field is valid!</div>
+                            <div class="invalid-feedback">Titre field cannot be blank!</div>
+                        </div>
+                        <div class="col-md-12">
+                            <select class="form-select mt-3" required>
+                                <option selected disabled value="">Theme formation</option>
+                                <option value="Front-end">Front-end</option>
+                                <option value="Back-end">Back-end</option>
+                                <option value="Communication">Communication</option>
+                                <option value="Full-stack">full-stack</option>
+                                
+                            </select>
+                            <div class="valid-feedback">You selected a theme!</div>
+                            <div class="invalid-feedback">Please select a theme!</div>
+                        </div>
+                        <br>
+                        <div class="col-md-12">
+                            <input class="form-control" type="date" name="date_formation" placeholder="Date formation" required>
+                            <div class="valid-feedback">Date field is valid!</div>
+                            <div class="invalid-feedback">Date field cannot be blank!</div>
+                        </div><br>
+
+                        <div class="col-md-12">
+                            <input class="form-control" type="time" name="heure_formation" placeholder="Heure formation" required>
+                            <div class="valid-feedback">Heure field is valid!</div>
+                            <div class="invalid-feedback">Heure field cannot be blank!</div>
+                        </div>
+                        <br>
+                        <div class="col-md-12">
+                            <label for="payement">Payement :</label>
+                            <input  type="checkbox" name="payement"  required style="margin-left: 2%;">
+                            <label for="payement" style="margin-left: 2%;"> Payante </label>
+                            <input  type="checkbox" name="payement"  required style="margin-left: 2%;">
+                            <label for="payement" style="margin-left: 2%;"> Gratuite </label>
+                            <div class="valid-feedback">payement field is valid!</div>
+                            <div class="invalid-feedback">payement field cannot be blank!</div>
+                        </div>
+                        
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" name="montant" placeholder="Montant" required>
+                            <div class="valid-feedback">Montant field is valid!</div>
+                            <div class="invalid-feedback">Montant field cannot be blank!</div>
+                        </div>
+                        <br>
+                        <div class="col-md-12">
+                            <textarea name="Decription" id="desc" placeholder="Description"></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="payement">Lieu de formation :</label>
+                            <input  type="checkbox" name="payement"  required style="margin-left: 2%;">
+                            <label for="payement" style="margin-left: 2%;"> Présentielle </label>
+                            <input  type="checkbox" name="payement"  required style="margin-left: 2%;">
+                            <label for="payement" style="margin-left: 2%;"> En ligne </label>
+                            <div class="valid-feedback">Lieu field is valid!</div>
+                            <div class="invalid-feedback">Lieu field cannot be blank!</div>
+                        </div>
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label">Je confirme que toutes les informations sont correctes</label>
+                            <div class="invalid-feedback">s'il vous plait confirmer vos données!</div>
+                        </div>
+                        <div class="form-button mt-3">
+                            <button id="submit" type="submit" class="btn btn-primary">S'inscrire</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

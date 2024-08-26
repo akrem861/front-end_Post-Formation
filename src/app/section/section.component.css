@@ -1,0 +1,28 @@
+.card{
+    border-radius: 10px;
+    border: 2px solid #004085;
+    filter: drop-shadow(3px 3px 8px rgb(31, 21, 83));
+}
+.animated-img {
+    transition: transform 0.3s ease-out; /* Ajoute un effet de transition au zoom */
+}
+
+.animated-img:hover {
+    transform: scale(1.1); /* Zoom de 110% au survol */
+}
+.imgdim{
+    width: 250px;
+    height: 150px;
+}
+/* h3{
+    font-weight: bold;
+    color:linear-gradient(to right, #1a237e, #367cc7); 
+    font-family: 'Arial', sans-serif;
+    text-shadow: 1px 2px 4px rgba(34, 16, 191, 0.5); 
+    text-align:left;
+    margin-left: 7rem;
+} */
+
+.butt{
+    margin-right: 18rem;
+}

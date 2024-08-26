@@ -1,0 +1,38 @@
+/* Ensure the body and html take full height */
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .table {
+    width: 100%;
+    max-width: 1200px; /* Optional: Set a max-width for the table */
+    border-collapse: collapse;
+  }
+  
+  .table th, .table td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd; /* Optional: Add border for better visibility */
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+  }
+  
+  .alert {
+    width: 100%;
+    max-width: 1200px; /* Optional: Set a max-width for the alerts */
+    margin-bottom: 20px;
+  }
+  

@@ -1,0 +1,121 @@
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Inscrire maintenant</h3>
+                    <p>Remplir les données ci-dessous.</p>
+
+                     <!-- Messages -->
+                     <div *ngIf="successMessage" class="alert alert-success">
+                        {{ successMessage }}
+                    </div>
+                    <div *ngIf="errorMessage" class="alert alert-danger">
+                        {{ errorMessage }}
+                    </div>
+
+                    <form #registrationForm="ngForm" (ngSubmit)="onSubmit()">
+                        
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" name="nom" placeholder="Nom" required [(ngModel)]="formData.nom">
+                            <div class="valid-feedback">nom field is valid!</div>
+                            <div class="invalid-feedback">nom field cannot be blank!</div>
+                        </div>
+                        
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" name="prenom" placeholder="Prenom" required [(ngModel)]="formData.prenom">
+                            <div class="valid-feedback">prenom field is valid!</div>
+                            <div class="invalid-feedback">prenom field cannot be blank!</div>
+                        </div>
+                        
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" name="adresse" placeholder="Adresse" required [(ngModel)]="formData.adresse">
+                            <div class="valid-feedback">adresse field is valid!</div>
+                            <div class="invalid-feedback">adresse field cannot be blank!</div>
+                        </div>
+                        
+                        <div class="col-md-12">
+                            <input class="form-control" type="email" name="email" placeholder="Email" required [(ngModel)]="formData.email">
+                            <div class="valid-feedback">email field is valid!</div>
+                            <div class="invalid-feedback">email field cannot be blank!</div>
+                        </div>
+                        
+                        <div class="col-md-12">
+                            <input class="form-control" type="password" name="password" placeholder="Mot de passe" required [(ngModel)]="formData.password">
+                            <div class="valid-feedback">password field is valid!</div>
+                            <div class="invalid-feedback">password field cannot be blank!</div>
+                        </div>
+                        
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" name="telephone" placeholder="Telephone" required [(ngModel)]="formData.telephone">
+                            <div class="valid-feedback">telephone field is valid!</div>
+                            <div class="invalid-feedback">telephone field cannot be blank!</div>
+                        </div>
+                        
+                        <br>
+                        
+                        <!-- Show Post dropdown only if not registering as formateur -->
+                        <div *ngIf="!isFormateur" class="col-md-12">
+                            <label for="post">Poste :</label>
+                            <select class="form-control" name="post" required [(ngModel)]="formData.post_name">
+                                <option *ngFor="let post of posts" [value]="post.name">{{ post.name }}</option>
+                            </select>
+                            <div class="valid-feedback">poste field is valid!</div>
+                            <div class="invalid-feedback">poste field cannot be blank!</div>
+                        </div>
+                        
+                        <br>
+                        
+                        <!-- Checkbox to toggle formateur/candidat fields -->
+                        <div class="col-md-12">
+                            <label>
+                                <input type="checkbox" [(ngModel)]="isFormateur" name="isFormateur"> Formateur
+                            </label>
+                        </div>
+                        
+                        <br>
+                        
+                        <!-- Show Formateur fields only if isFormateur is true -->
+                        <div *ngIf="isFormateur">
+                            <div class="col-md-12">
+                                <label for="specialites">Spécialités :</label>
+                                <input class="form-control" type="text" name="specialites" placeholder="Spécialités" required [(ngModel)]="formData.specialites">
+                                <div class="valid-feedback">specialites field is valid!</div>
+                                <div class="invalid-feedback">specialites field cannot be blank!</div>
+                            </div>
+                            
+                            <div class="col-md-12">
+                                <label for="cv">CV :</label>
+                                <input class="form-control" type="file" name="cv" required (change)="onFileSelected($event, 'cv')">
+                                <div class="valid-feedback">cv field is valid!</div>
+                                <div class="invalid-feedback">cv field cannot be blank!</div>
+                            </div>
+                        </div>
+                        
+                        <br>
+                        
+                        <div class="col-md-12">
+                            <label for="photo">Photo :</label>
+                            <input class="form-control" type="file" name="photo" required (change)="onFileSelected($event, 'photo')">
+                            <div class="valid-feedback">photo field is valid!</div>
+                            <div class="invalid-feedback">photo field cannot be blank!</div>
+                        </div>
+                        
+                        <br>
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="confirmation" required>
+                            <label class="form-check-label">Je confirme que toutes les informations sont correctes</label>
+                            <div class="invalid-feedback">s'il vous plait confirmer vos données!</div>
+                        </div>
+                        
+                        <div class="form-button mt-3">
+                            <button id="submit" type="submit" class="btn btn-primary">S'inscrire</button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

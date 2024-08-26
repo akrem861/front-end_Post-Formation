@@ -1,0 +1,113 @@
+<br>
+<div class="container mt-5">
+    <!-- Add Formation Button -->
+    <button class="btn btn-primary" (click)="toggleForm()">Add Formation</button>
+
+    <!-- Form for Adding/Editing Formation -->
+    <div *ngIf="showForm">
+        <div class="form-container">
+            <h2 class="form-title">{{ editMode ? 'Edit Formation' : 'Formation Request Form' }}</h2>
+
+            <div *ngIf="success && success.length > 0" class="alert alert-success" role="alert">
+                {{ success }}
+            </div>
+
+            <div *ngIf="error && error.length > 0" class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+
+            <form (ngSubmit)="editMode ? updateFormation() : addFormation()">
+                <div class="mb-3">
+                    <label for="titre" class="form-label">Titre</label>
+                    <input type="text" class="form-control" id="titre" name="titre" [(ngModel)]="titre" required>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="date" class="form-label">Date</label>
+                        <input type="date" class="form-control" id="date" name="date" [(ngModel)]="date" required>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="heure" class="form-label">Heure</label>
+                        <input type="time" class="form-control" id="heure" name="heure" [(ngModel)]="heure" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="payant" class="form-label">Payant</label>
+                        <select class="form-select" id="payant" name="payant" [(ngModel)]="payant" required>
+                            <option value="true" [selected]="payant === true">Yes</option>
+                            <option value="false" [selected]="payant === false">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="montent" class="form-label">Montant</label>
+                        <input type="number" class="form-control" id="montent" name="montent" [(ngModel)]="montent" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" id="description" name="description" rows="3" [(ngModel)]="description" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="lieu" class="form-label">Lieu</label>
+                    <input type="text" class="form-control" id="lieu" name="lieu" [(ngModel)]="lieu" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="themeFormation" class="form-label">Thèmes de Formation</label>
+                    <input type="text" class="form-control" id="themeFormation" name="themeFormation" placeholder="Enter themes separated by commas" [(ngModel)]="themeFormation" required>
+                    <small class="form-text">Separate themes with commas (e.g., backend, microservice)</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">Upload Image</label>
+                    <input type="file" class="form-control" id="image" (change)="onImageSelected($event)" required>
+                  </div>
+
+                <button type="submit" class="btn btn-outline-dark mt-auto">{{ editMode ? 'Update' : 'Submit' }}</button>
+                <button type="button" class="btn btn-secondary mt-auto" (click)="toggleForm()">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Table of Formations -->
+    <div class="mt-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Titre</th>
+                    <th>Date</th>
+                    <th>Heure</th>
+                    <!-- <th>Payant</th> -->
+                    <th>Montant</th>
+                    <th>Description</th>
+                    <th>Lieu</th>
+                    <th>Thèmes</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let formation of formations">
+                    <td>{{ formation.titre }}</td>
+                    <td>{{ formation.date }}</td>
+                    <td>{{ formation.heure }}</td>
+                    <!-- <td>{{ formation.montent==="Gratuit" ? 'non' : 'oui' }}</td> -->
+                    <td>{{ formation.montent }}</td>
+                    <td>{{ formation.description }}</td>
+                    <td>{{ formation.lieu }}</td>
+                    <td>{{ formation.theme? formation.theme.join(', ') : 'No themes' }}</td>
+                    <td>
+                        <button class="btn btn-info btn-sm" (click)="editFormation(formation)">Edit</button>
+                        <button class="btn btn-danger btn-sm" (click)="deleteFormation(formation.id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

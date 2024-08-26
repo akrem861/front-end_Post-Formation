@@ -1,0 +1,22 @@
+.logopostedim{
+    width: 40px;
+    height: 40px;
+    
+}
+.animated-img {
+    transition: transform 0.3s ease-out; /* Ajoute un effet de transition au zoom */
+}
+
+.animated-img:hover {
+    transform: scale(1.1); /* Zoom de 110% au survol */
+}
+.navbar{
+    position: fixed; /* Rend la barre de navigation fixe */
+    top: 0;
+    left: 0;
+    width: 100%; /* Prend toute la largeur */
+    background:linear-gradient(to right, #b5b9e2, #dfdfdf);
+    
+    z-index: 1000; /* Assure que la navbar est au-dessus des autres éléments */
+    margin-bottom: 5rem;
+}

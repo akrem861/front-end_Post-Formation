@@ -1,0 +1,49 @@
+<br>
+<div class="container mt-5">
+    <button class="btn btn-primary" (click)="toggleForm()">Add Post</button>
+  
+    <div *ngIf="showForm" class="form-container">
+      <h2>{{ editMode ? 'Edit Post' : 'Add Post' }}</h2>
+  
+      <div *ngIf="success" class="alert alert-success">{{ success }}</div>
+      <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+  
+      <form (ngSubmit)="editMode ? updatePost() : addPost()">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" id="name" [(ngModel)]="name" name="name" class="form-control" required>
+        </div>
+  
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea id="description" [(ngModel)]="description" name="description" class="form-control" required></textarea>
+        </div>
+  
+        <button type="submit" class="btn btn-success">{{ editMode ? 'Update' : 'Add' }}</button>
+        <button type="button" class="btn btn-secondary" (click)="toggleForm()">Cancel</button>
+      </form>
+    </div>
+  
+    <div class="mt-4">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let post of posts">
+            <td>{{ post.name }}</td>
+            <td>{{ post.description }}</td>
+            <td>
+              <button class="btn btn-info btn-sm" (click)="editPost(post)">Edit</button>
+              <button class="btn btn-danger btn-sm" (click)="deletePost(post.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

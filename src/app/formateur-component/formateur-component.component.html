@@ -1,0 +1,43 @@
+
+<div class="container">
+    <h2>List of Formateurs</h2>
+  
+    <div *ngIf="successMessage" class="alert alert-success">
+      {{ successMessage }}
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+  
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Adresse</th>
+          <th>Email</th>
+          <th>Téléphone</th>
+          <th>Valid</th>
+          <th>Specialites</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let formateur of formateurs">
+          <td>{{ formateur.id }}</td>
+          <td>{{ formateur.nom }}</td>
+          <td>{{ formateur.prenom }}</td>
+          <td>{{ formateur.adresse }}</td>
+          <td>{{ formateur.email }}</td>
+          <td>{{ formateur.telephone }}</td>
+          <td>{{ formateur.isValid }}</td>
+          <td>{{ formateur.specialites_name.join(', ') }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteFormateur(formateur.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
